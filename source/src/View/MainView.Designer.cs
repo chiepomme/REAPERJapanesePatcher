@@ -41,13 +41,15 @@
             this.MastarLangPackRadio = new System.Windows.Forms.RadioButton();
             this.TranslationLangPackRadio = new System.Windows.Forms.RadioButton();
             this.LangPackSelectGroup = new System.Windows.Forms.GroupBox();
+            this.SettingPanel = new System.Windows.Forms.Panel();
             this.LangPackSelectGroup.SuspendLayout();
+            this.SettingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BrowseReaperButton
             // 
             this.BrowseReaperButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BrowseReaperButton.Location = new System.Drawing.Point(377, 29);
+            this.BrowseReaperButton.Location = new System.Drawing.Point(482, 13);
             this.BrowseReaperButton.Name = "BrowseReaperButton";
             this.BrowseReaperButton.Size = new System.Drawing.Size(77, 23);
             this.BrowseReaperButton.TabIndex = 0;
@@ -58,7 +60,7 @@
             // TargetReaperLabel
             // 
             this.TargetReaperLabel.AutoSize = true;
-            this.TargetReaperLabel.Location = new System.Drawing.Point(12, 14);
+            this.TargetReaperLabel.Location = new System.Drawing.Point(0, 0);
             this.TargetReaperLabel.Name = "TargetReaperLabel";
             this.TargetReaperLabel.Size = new System.Drawing.Size(112, 12);
             this.TargetReaperLabel.TabIndex = 1;
@@ -67,7 +69,7 @@
             // FontFixCheck
             // 
             this.FontFixCheck.AutoSize = true;
-            this.FontFixCheck.Location = new System.Drawing.Point(12, 56);
+            this.FontFixCheck.Location = new System.Drawing.Point(5, 40);
             this.FontFixCheck.Name = "FontFixCheck";
             this.FontFixCheck.Size = new System.Drawing.Size(179, 16);
             this.FontFixCheck.TabIndex = 2;
@@ -78,7 +80,7 @@
             // IncludeAllCheck
             // 
             this.IncludeAllCheck.AutoSize = true;
-            this.IncludeAllCheck.Location = new System.Drawing.Point(12, 78);
+            this.IncludeAllCheck.Location = new System.Drawing.Point(5, 62);
             this.IncludeAllCheck.Name = "IncludeAllCheck";
             this.IncludeAllCheck.Size = new System.Drawing.Size(185, 16);
             this.IncludeAllCheck.TabIndex = 3;
@@ -89,7 +91,7 @@
             // ExecuteButton
             // 
             this.ExecuteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExecuteButton.Location = new System.Drawing.Point(379, 230);
+            this.ExecuteButton.Location = new System.Drawing.Point(499, 217);
             this.ExecuteButton.Name = "ExecuteButton";
             this.ExecuteButton.Size = new System.Drawing.Size(75, 23);
             this.ExecuteButton.TabIndex = 6;
@@ -101,25 +103,25 @@
             // 
             this.TargetReaperBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TargetReaperBox.Location = new System.Drawing.Point(12, 31);
+            this.TargetReaperBox.Location = new System.Drawing.Point(2, 15);
             this.TargetReaperBox.Name = "TargetReaperBox";
-            this.TargetReaperBox.Size = new System.Drawing.Size(357, 19);
+            this.TargetReaperBox.Size = new System.Drawing.Size(474, 19);
             this.TargetReaperBox.TabIndex = 7;
             // 
             // ProgressBar
             // 
             this.ProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProgressBar.Location = new System.Drawing.Point(12, 201);
+            this.ProgressBar.Location = new System.Drawing.Point(12, 188);
             this.ProgressBar.Name = "ProgressBar";
-            this.ProgressBar.Size = new System.Drawing.Size(442, 23);
+            this.ProgressBar.Size = new System.Drawing.Size(562, 23);
             this.ProgressBar.TabIndex = 8;
             // 
             // AuthorLinkLabel
             // 
             this.AuthorLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AuthorLinkLabel.AutoSize = true;
-            this.AuthorLinkLabel.Location = new System.Drawing.Point(12, 235);
+            this.AuthorLinkLabel.Location = new System.Drawing.Point(12, 222);
             this.AuthorLinkLabel.Name = "AuthorLinkLabel";
             this.AuthorLinkLabel.Size = new System.Drawing.Size(78, 12);
             this.AuthorLinkLabel.TabIndex = 9;
@@ -131,7 +133,7 @@
             // 
             this.ProgressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProgressLabel.AutoSize = true;
-            this.ProgressLabel.Location = new System.Drawing.Point(12, 186);
+            this.ProgressLabel.Location = new System.Drawing.Point(12, 173);
             this.ProgressLabel.Name = "ProgressLabel";
             this.ProgressLabel.Size = new System.Drawing.Size(53, 12);
             this.ProgressLabel.TabIndex = 10;
@@ -173,34 +175,46 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LangPackSelectGroup.Controls.Add(this.MastarLangPackRadio);
             this.LangPackSelectGroup.Controls.Add(this.TranslationLangPackRadio);
-            this.LangPackSelectGroup.Location = new System.Drawing.Point(12, 100);
+            this.LangPackSelectGroup.Location = new System.Drawing.Point(5, 84);
             this.LangPackSelectGroup.Name = "LangPackSelectGroup";
-            this.LangPackSelectGroup.Size = new System.Drawing.Size(440, 63);
+            this.LangPackSelectGroup.Size = new System.Drawing.Size(554, 63);
             this.LangPackSelectGroup.TabIndex = 13;
             this.LangPackSelectGroup.TabStop = false;
             this.LangPackSelectGroup.Text = "インストールする日本語化パック";
+            // 
+            // SettingPanel
+            // 
+            this.SettingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SettingPanel.Controls.Add(this.TargetReaperLabel);
+            this.SettingPanel.Controls.Add(this.LangPackSelectGroup);
+            this.SettingPanel.Controls.Add(this.BrowseReaperButton);
+            this.SettingPanel.Controls.Add(this.IncludeAllCheck);
+            this.SettingPanel.Controls.Add(this.FontFixCheck);
+            this.SettingPanel.Controls.Add(this.TargetReaperBox);
+            this.SettingPanel.Location = new System.Drawing.Point(12, 12);
+            this.SettingPanel.Name = "SettingPanel";
+            this.SettingPanel.Size = new System.Drawing.Size(562, 149);
+            this.SettingPanel.TabIndex = 14;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 265);
-            this.Controls.Add(this.LangPackSelectGroup);
+            this.ClientSize = new System.Drawing.Size(584, 252);
+            this.Controls.Add(this.SettingPanel);
             this.Controls.Add(this.ProgressLabel);
             this.Controls.Add(this.AuthorLinkLabel);
             this.Controls.Add(this.ProgressBar);
-            this.Controls.Add(this.TargetReaperBox);
-            this.Controls.Add(this.FontFixCheck);
-            this.Controls.Add(this.IncludeAllCheck);
             this.Controls.Add(this.ExecuteButton);
-            this.Controls.Add(this.TargetReaperLabel);
-            this.Controls.Add(this.BrowseReaperButton);
-            this.MinimumSize = new System.Drawing.Size(480, 250);
+            this.MinimumSize = new System.Drawing.Size(600, 290);
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REAPER 日本語化パッチ";
             this.LangPackSelectGroup.ResumeLayout(false);
             this.LangPackSelectGroup.PerformLayout();
+            this.SettingPanel.ResumeLayout(false);
+            this.SettingPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +235,7 @@
         private System.Windows.Forms.RadioButton MastarLangPackRadio;
         private System.Windows.Forms.RadioButton TranslationLangPackRadio;
         private System.Windows.Forms.GroupBox LangPackSelectGroup;
+        private System.Windows.Forms.Panel SettingPanel;
     }
 }
 
