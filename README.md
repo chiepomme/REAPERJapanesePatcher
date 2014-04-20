@@ -23,9 +23,9 @@ https://github.com/chiepomme/REAPERJapanesePatcher/raw/master/REAPER%E6%97%A5%E6
 だれでも編集できますので以下のファイルを直接編集してください。
 履歴がすべて保存されていますので、間違いは気にせず気軽に編集してください。
 
-https://github.com/chiepomme/REAPERJapanesePatcher/edit/master/Japanese.ReaperLangPack
+https://github.com/chiepomme/REAPERJapanesePatcher/edit/translation/Japanese.ReaperLangPack
 
-もちろん github らしく PR を出していただいてもだいじょうぶです。
+もちろん github らしく translation ブランチに PR を出していただいてもだいじょうぶです。
 
 
 バグを見つけた
@@ -37,4 +37,5 @@ https://github.com/chiepomme/REAPERJapanesePatcher/edit/master/Japanese.ReaperLa
 開発に協力したい
 ---------------------
 
-是非 PR を投げてください。なお開発には、Visual Studio 2013 か MSBuild 12.0 が必要です。
+是非 development ブランチに PR を投げてください。
+なお開発には、Visual Studio 2013 か MSBuild 12.0 が必要です。
