@@ -62,6 +62,9 @@ namespace REAPERJapanesePatcher
 
         private async void ExecuteButton_Click(object sender, System.EventArgs e)
         {
+            ExecuteButton.Enabled = false;
+            SettingPanel.Enabled = false;
+
             if (Patcher.IsFontFixNeeded)
             {
                 var fontProgress = new Progress<FontFixProgress>(p =>
@@ -89,6 +92,9 @@ namespace REAPERJapanesePatcher
             Patcher.InstallLangPack();
 
             ProgressLabel.Text = "日本語化が完了しました。REAPER 上で OK を押した後、REAPER を再起動してください。";
+
+            ExecuteButton.Enabled = true;
+            SettingPanel.Enabled = true;
         }
 
         private void AuthorLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
