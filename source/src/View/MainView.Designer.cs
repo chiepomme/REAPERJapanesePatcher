@@ -32,13 +32,16 @@
             this.TargetReaperLabel = new System.Windows.Forms.Label();
             this.FontFixCheck = new System.Windows.Forms.CheckBox();
             this.IncludeAllCheck = new System.Windows.Forms.CheckBox();
-            this.LanguagePackCheck = new System.Windows.Forms.CheckBox();
             this.ExecuteButton = new System.Windows.Forms.Button();
             this.TargetReaperBox = new System.Windows.Forms.TextBox();
             this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.AuthorLinkLabel = new System.Windows.Forms.LinkLabel();
             this.ProgressLabel = new System.Windows.Forms.Label();
             this.ReaperBrowseDialog = new System.Windows.Forms.OpenFileDialog();
+            this.MastarLangPackRadio = new System.Windows.Forms.RadioButton();
+            this.TranslationLangPackRadio = new System.Windows.Forms.RadioButton();
+            this.LangPackSelectGroup = new System.Windows.Forms.GroupBox();
+            this.LangPackSelectGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // BrowseReaperButton
@@ -83,21 +86,10 @@
             this.IncludeAllCheck.UseVisualStyleBackColor = true;
             this.IncludeAllCheck.CheckedChanged += new System.EventHandler(this.IncludeAllCheck_CheckedChanged);
             // 
-            // LanguagePackCheck
-            // 
-            this.LanguagePackCheck.AutoSize = true;
-            this.LanguagePackCheck.Location = new System.Drawing.Point(12, 100);
-            this.LanguagePackCheck.Name = "LanguagePackCheck";
-            this.LanguagePackCheck.Size = new System.Drawing.Size(226, 16);
-            this.LanguagePackCheck.TabIndex = 4;
-            this.LanguagePackCheck.Text = "最新版の日本語化パックをインストールする";
-            this.LanguagePackCheck.UseVisualStyleBackColor = true;
-            this.LanguagePackCheck.CheckedChanged += new System.EventHandler(this.LanguagePackCheck_CheckedChanged);
-            // 
             // ExecuteButton
             // 
             this.ExecuteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExecuteButton.Location = new System.Drawing.Point(379, 177);
+            this.ExecuteButton.Location = new System.Drawing.Point(379, 230);
             this.ExecuteButton.Name = "ExecuteButton";
             this.ExecuteButton.Size = new System.Drawing.Size(75, 23);
             this.ExecuteButton.TabIndex = 6;
@@ -118,7 +110,7 @@
             // 
             this.ProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProgressBar.Location = new System.Drawing.Point(12, 148);
+            this.ProgressBar.Location = new System.Drawing.Point(12, 201);
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(442, 23);
             this.ProgressBar.TabIndex = 8;
@@ -127,7 +119,7 @@
             // 
             this.AuthorLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AuthorLinkLabel.AutoSize = true;
-            this.AuthorLinkLabel.Location = new System.Drawing.Point(12, 182);
+            this.AuthorLinkLabel.Location = new System.Drawing.Point(12, 235);
             this.AuthorLinkLabel.Name = "AuthorLinkLabel";
             this.AuthorLinkLabel.Size = new System.Drawing.Size(78, 12);
             this.AuthorLinkLabel.TabIndex = 9;
@@ -139,7 +131,7 @@
             // 
             this.ProgressLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ProgressLabel.AutoSize = true;
-            this.ProgressLabel.Location = new System.Drawing.Point(12, 133);
+            this.ProgressLabel.Location = new System.Drawing.Point(12, 186);
             this.ProgressLabel.Name = "ProgressLabel";
             this.ProgressLabel.Size = new System.Drawing.Size(53, 12);
             this.ProgressLabel.TabIndex = 10;
@@ -151,16 +143,53 @@
             this.ReaperBrowseDialog.FileName = "reaper.exe";
             this.ReaperBrowseDialog.Title = "reaper.exe を選択してください";
             // 
+            // MastarLangPackRadio
+            // 
+            this.MastarLangPackRadio.AutoSize = true;
+            this.MastarLangPackRadio.Checked = true;
+            this.MastarLangPackRadio.Location = new System.Drawing.Point(9, 18);
+            this.MastarLangPackRadio.Name = "MastarLangPackRadio";
+            this.MastarLangPackRadio.Size = new System.Drawing.Size(178, 16);
+            this.MastarLangPackRadio.TabIndex = 11;
+            this.MastarLangPackRadio.TabStop = true;
+            this.MastarLangPackRadio.Text = "安定バージョン (master ブランチ)";
+            this.MastarLangPackRadio.UseVisualStyleBackColor = true;
+            this.MastarLangPackRadio.CheckedChanged += new System.EventHandler(this.LangPackRadio_CheckedChanged);
+            // 
+            // TranslationLangPackRadio
+            // 
+            this.TranslationLangPackRadio.AutoSize = true;
+            this.TranslationLangPackRadio.Location = new System.Drawing.Point(9, 40);
+            this.TranslationLangPackRadio.Name = "TranslationLangPackRadio";
+            this.TranslationLangPackRadio.Size = new System.Drawing.Size(209, 16);
+            this.TranslationLangPackRadio.TabIndex = 12;
+            this.TranslationLangPackRadio.Text = "開発中バージョン (translation ブランチ)";
+            this.TranslationLangPackRadio.UseVisualStyleBackColor = true;
+            this.TranslationLangPackRadio.CheckedChanged += new System.EventHandler(this.LangPackRadio_CheckedChanged);
+            // 
+            // LangPackSelectGroup
+            // 
+            this.LangPackSelectGroup.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LangPackSelectGroup.Controls.Add(this.MastarLangPackRadio);
+            this.LangPackSelectGroup.Controls.Add(this.TranslationLangPackRadio);
+            this.LangPackSelectGroup.Location = new System.Drawing.Point(12, 100);
+            this.LangPackSelectGroup.Name = "LangPackSelectGroup";
+            this.LangPackSelectGroup.Size = new System.Drawing.Size(440, 63);
+            this.LangPackSelectGroup.TabIndex = 13;
+            this.LangPackSelectGroup.TabStop = false;
+            this.LangPackSelectGroup.Text = "インストールする日本語化パック";
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 212);
+            this.ClientSize = new System.Drawing.Size(464, 265);
+            this.Controls.Add(this.LangPackSelectGroup);
             this.Controls.Add(this.ProgressLabel);
             this.Controls.Add(this.AuthorLinkLabel);
             this.Controls.Add(this.ProgressBar);
             this.Controls.Add(this.TargetReaperBox);
-            this.Controls.Add(this.LanguagePackCheck);
             this.Controls.Add(this.FontFixCheck);
             this.Controls.Add(this.IncludeAllCheck);
             this.Controls.Add(this.ExecuteButton);
@@ -170,6 +199,8 @@
             this.Name = "MainView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REAPER 日本語化パッチ";
+            this.LangPackSelectGroup.ResumeLayout(false);
+            this.LangPackSelectGroup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,13 +212,15 @@
         private System.Windows.Forms.Label TargetReaperLabel;
         private System.Windows.Forms.CheckBox FontFixCheck;
         private System.Windows.Forms.CheckBox IncludeAllCheck;
-        private System.Windows.Forms.CheckBox LanguagePackCheck;
         private System.Windows.Forms.Button ExecuteButton;
         private System.Windows.Forms.TextBox TargetReaperBox;
         private System.Windows.Forms.ProgressBar ProgressBar;
         private System.Windows.Forms.LinkLabel AuthorLinkLabel;
         private System.Windows.Forms.Label ProgressLabel;
         private System.Windows.Forms.OpenFileDialog ReaperBrowseDialog;
+        private System.Windows.Forms.RadioButton MastarLangPackRadio;
+        private System.Windows.Forms.RadioButton TranslationLangPackRadio;
+        private System.Windows.Forms.GroupBox LangPackSelectGroup;
     }
 }
 

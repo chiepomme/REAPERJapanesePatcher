@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace REAPERJapanesePatcher
@@ -19,7 +18,16 @@ namespace REAPERJapanesePatcher
 
             FontFixCheck.Checked = Patcher.IsFontFixNeeded;
             IncludeAllCheck.Checked = Patcher.IncludesAllFiles;
-            LanguagePackCheck.Checked = Patcher.IsLanguagePackNeeded;
+
+            switch (Patcher.SelectedLangPack)
+            {
+                case JapanesePatcher.LangPackType.Master:
+                    MastarLangPackRadio.Checked = true;
+                    break;
+                case JapanesePatcher.LangPackType.Translation:
+                    TranslationLangPackRadio.Checked = true;
+                    break;
+            }
         }
 
         private void BrowseReaperButton_Click(object sender, System.EventArgs e)
@@ -44,9 +52,12 @@ namespace REAPERJapanesePatcher
             Patcher.IncludesAllFiles = IncludeAllCheck.Checked;
         }
 
-        private void LanguagePackCheck_CheckedChanged(object sender, System.EventArgs e)
+        private void LangPackRadio_CheckedChanged(object sender, EventArgs e)
         {
-            Patcher.IsLanguagePackNeeded = LanguagePackCheck.Checked;
+            if (MastarLangPackRadio.Checked)
+                Patcher.SelectedLangPack = JapanesePatcher.LangPackType.Master;
+            else if (TranslationLangPackRadio.Checked)
+                Patcher.SelectedLangPack = JapanesePatcher.LangPackType.Translation;
         }
 
         private async void ExecuteButton_Click(object sender, System.EventArgs e)
@@ -65,22 +76,19 @@ namespace REAPERJapanesePatcher
                 ProgressLabel.Text = "フォントサイズの修正が完了しました";
             }
 
-            if (Patcher.IsLanguagePackNeeded)
+            ProgressLabel.Text = "日本語言語パックをダウンロード中";
+            var downloadProgress = new Progress<DownloadProgress>(p =>
             {
-                ProgressLabel.Text = "日本語言語パックをダウンロード中";
-                var downloadProgress = new Progress<DownloadProgress>(p =>
-                {
-                    ProgressBar.Maximum = 1000;
-                    var rate = (double)p.DownloadedLength / p.TotalLength;
-                    ProgressBar.Value = (int)(rate * ProgressBar.Maximum);
-                });
+                ProgressBar.Maximum = 1000;
+                var rate = (double)p.DownloadedLength / p.TotalLength;
+                ProgressBar.Value = (int)(rate * ProgressBar.Maximum);
+            });
 
-                await Patcher.DownloadLangPack(downloadProgress);
-                ProgressLabel.Text = "日本語言語パックのダウンロードが完了しました";
-                Patcher.InstallLangPack();
-            }
+            await Patcher.DownloadLangPack(downloadProgress);
+            ProgressLabel.Text = "日本語言語パックのダウンロードが完了しました";
+            Patcher.InstallLangPack();
 
-            ProgressLabel.Text = "日本語化が完了しました";
+            ProgressLabel.Text = "日本語化が完了しました。REAPER 上で OK を押した後、REAPER を再起動してください。";
         }
 
         private void AuthorLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
