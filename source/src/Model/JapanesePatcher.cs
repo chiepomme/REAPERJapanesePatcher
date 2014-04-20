@@ -8,8 +8,19 @@ namespace REAPERJapanesePatcher
 {
     public class JapanesePatcher
     {
-        public static readonly Uri LanguagePackUri = new Uri("https://raw.githubusercontent.com/chiepomme/REAPERJapanesePatcher/master/Japanese.ReaperLangPack");
-        public readonly string LangPackDestination = Path.Combine(Path.GetTempPath(), Path.GetFileName(LanguagePackUri.LocalPath));
+        public enum LangPackType
+        {
+            Master,
+            Translation,
+        }
+
+        public static readonly Dictionary<LangPackType, Uri> LangPackUriMap = new Dictionary<LangPackType, Uri>(){
+            {LangPackType.Master, new Uri("https://raw.githubusercontent.com/chiepomme/REAPERJapanesePatcher/master/Japanese.ReaperLangPack")},
+            {LangPackType.Translation, new Uri("https://raw.githubusercontent.com/chiepomme/REAPERJapanesePatcher/translation/Japanese.ReaperLangPack")},
+        };
+
+        public readonly string LangPackDestination =
+            Path.Combine(Path.GetTempPath(), Path.GetFileName(LangPackUriMap[LangPackType.Master].LocalPath));
 
         readonly ReaperFinder ReaperFinder = new ReaperFinder();
         readonly LanguagePackInstaller LangPackInstaller = new LanguagePackInstaller();
@@ -19,7 +30,7 @@ namespace REAPERJapanesePatcher
         public string ReaperPath { get; set; }
         public bool IsFontFixNeeded { get; set; }
         public bool IncludesAllFiles { get; set; }
-        public bool IsLanguagePackNeeded { get; set; }
+        public LangPackType SelectedLangPack { get; set; }
 
         public JapanesePatcher()
         {
@@ -27,7 +38,7 @@ namespace REAPERJapanesePatcher
 
             IsFontFixNeeded = true;
             IncludesAllFiles = false;
-            IsLanguagePackNeeded = true;
+            SelectedLangPack = LangPackType.Master;
         }
 
         public async Task FixFonts(IProgress<FontFixProgress> progress = null)
@@ -63,13 +74,11 @@ namespace REAPERJapanesePatcher
 
         public async Task DownloadLangPack(IProgress<DownloadProgress> progress = null)
         {
-            if (!IsLanguagePackNeeded) return;
-            await Downloader.Download(LanguagePackUri, LangPackDestination, progress);
+            await Downloader.Download(LangPackUriMap[SelectedLangPack], LangPackDestination, progress);
         }
 
         public void InstallLangPack()
         {
-            if (!IsLanguagePackNeeded) return;
             LangPackInstaller.Install(LangPackDestination, ReaperPath);
         }
     }

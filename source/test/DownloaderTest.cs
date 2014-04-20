@@ -8,8 +8,14 @@ namespace REAPERJapanesePatcher.Test
     [TestClass]
     public class DownloaderTest
     {
-        readonly string DownloadDestinationPath =
-            Path.Combine(Path.GetTempPath(), Path.GetFileName(JapanesePatcher.LanguagePackUri.LocalPath));
+        readonly Uri DownloadUri;
+        readonly string DownloadDestinationPath;
+
+        public DownloaderTest()
+        {
+            DownloadUri = JapanesePatcher.LangPackUriMap[JapanesePatcher.LangPackType.Master];
+            DownloadDestinationPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(DownloadUri.LocalPath));
+        }
 
         [TestInitialize]
         public void Initialize()
@@ -21,7 +27,7 @@ namespace REAPERJapanesePatcher.Test
         public async Task ファイルをダウンロードできる()
         {
             var downloader = new Downloader();
-            await downloader.Download(JapanesePatcher.LanguagePackUri, DownloadDestinationPath);
+            await downloader.Download(DownloadUri, DownloadDestinationPath);
             Assert.IsTrue(File.Exists(DownloadDestinationPath));
             Assert.IsTrue(new FileInfo(DownloadDestinationPath).Length > 100000);
         }
@@ -41,7 +47,7 @@ namespace REAPERJapanesePatcher.Test
                 }
             );
 
-            await downloader.Download(JapanesePatcher.LanguagePackUri, DownloadDestinationPath, progress);
+            await downloader.Download(DownloadUri, DownloadDestinationPath, progress);
 
             Assert.IsNotNull(downloadedLength);
             Assert.IsNotNull(totalLength);
