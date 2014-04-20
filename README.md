@@ -41,3 +41,14 @@ https://github.com/chiepomme/REAPERJapanesePatcher/edit/translation/Japanese.Rea
 
 是非 development ブランチに PR を投げてください。
 なお開発には、Visual Studio 2013 か MSBuild 12.0 が必要です。
+
+
+Mac の方へ
+---------------------
+
+パッチのツールはないので、日本語言語パックをダウンロードしてください。（右クリックでダウンロードとかでできるとおもいます）
+
+- 安定版
+  - https://github.com/chiepomme/REAPERJapanesePatcher/raw/master/Japanese.ReaperLangPack
+- 開発版
+  - https://github.com/chiepomme/REAPERJapanesePatcher/raw/translation/Japanese.ReaperLangPack
