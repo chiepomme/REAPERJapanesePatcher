@@ -38,7 +38,6 @@ namespace REAPERJapanesePatcher
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
                 TargetReaperBox.Text = path;
-                Patcher.ReaperPath = path;
             }
         }
 
@@ -64,6 +63,8 @@ namespace REAPERJapanesePatcher
         {
             ExecuteButton.Enabled = false;
             SettingPanel.Enabled = false;
+
+            Patcher.ReaperPath = TargetReaperBox.Text;
 
             if (Patcher.IsFontFixNeeded)
             {
