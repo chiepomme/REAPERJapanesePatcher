@@ -1126,7 +1126,7 @@ D823E4F45BAFF03B=絞り込み:
 ;^D9B12705AD844C62=List1
 
 [DLG_133] ; IDD_FXSCAN
-;48AA81D531EF6413=Scanning DirectX FX...
+48AA81D531EF6413=DirectX エフェクトをスキャンしています...
 ;^F09E4B5C35AA14B9=Cancel
 ;^A27E076F9E7EA1E3=Progress1
 
@@ -1179,7 +1179,7 @@ AC26191C42FBEB16=スクラブ・ジョグ設定
 
 [DLG_137] ; IDD_PREFS_REC
 71A80CCF871123FB=録音設定
-;C2CE3FF2933AAAF9=Scroll track view while recording (if enabled for playback in options menu)
+C2CE3FF2933AAAF9=録音時にトラックビューをスクロールする (再生時に有効な場合)
 ;4F2B31BBF3D2C295=In loop recording, discard incomplete first or last takes if at least one full loop was recorded
 ;30CEF63161AD2E19=Show preview of recording items while recording, update frequency:
 ;281AEE36FEF3A6FE=Hz (default 3)
@@ -1211,11 +1211,11 @@ AC26191C42FBEB16=スクラブ・ジョグ設定
 ;^E8589A5C2472187A=samples
 
 [DLG_138] ; IDD_PREFS_MEDIA
-;8FFF66C9C9744E1E=Media settings
-;B8A37B079F8D2F12=When importing multiple media items:
-;1BECAFEE943F02F9=Copy imported media to project media directory
-;E64FC9552B0BA98B=Automatically name unnamed tracks on media import
-;9A9E25AAEAC16851=Set media items offline when application is not active
+8FFF66C9C9744E1E=メディア設定
+B8A37B079F8D2F12=複数のメディアをインポートする時:
+1BECAFEE943F02F9=インポートしたメディアをプロジェクトディレクトリにコピー
+E64FC9552B0BA98B=名前未入力のトラックにはメディアの名前をつける
+9A9E25AAEAC16851=アプリケーションが非アクティブの時はメディアファイルを閉じておく
 ;682D26505F615AFB=Automatically rebuild peaks
 ;706BC8DD84E18043=Prompt to confirm filename on \"open copy in editor\"
 ;30D3316093DF2C40=Tail length when using Apply FX to items:
