@@ -50,8 +50,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ReaperFinderTest.cs" />
+    <Compile Include="FontFixerTest.cs" />
+    <Compile Include="SubsequenceTest.cs" />
+    <Compile Include="PathStringExtensionTest.cs" />
+    <Compile Include="LanguagePackInstallerTest.cs" />
+    <Compile Include="DownloaderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\REAPERJapanesePatcher.csproj">
+      <Project>{94ba11d5-ad8f-4f81-85a8-f130cb091557}</Project>
+      <Name>REAPERJapanesePatcher</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

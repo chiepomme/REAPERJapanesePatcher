@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace REAPERJapanesePatcher
@@ -10,7 +12,7 @@ namespace REAPERJapanesePatcher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            Application.Run(new MainView(new JapanesePatcher()));
         }
     }
 }

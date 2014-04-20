@@ -38,6 +38,7 @@
             this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.AuthorLinkLabel = new System.Windows.Forms.LinkLabel();
             this.ProgressLabel = new System.Windows.Forms.Label();
+            this.ReaperBrowseDialog = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // BrowseReaperButton
@@ -49,6 +50,7 @@
             this.BrowseReaperButton.TabIndex = 0;
             this.BrowseReaperButton.Text = "変更";
             this.BrowseReaperButton.UseVisualStyleBackColor = true;
+            this.BrowseReaperButton.Click += new System.EventHandler(this.BrowseReaperButton_Click);
             // 
             // TargetReaperLabel
             // 
@@ -68,16 +70,18 @@
             this.FontFixCheck.TabIndex = 2;
             this.FontFixCheck.Text = "フォントとフォントサイズも修正する";
             this.FontFixCheck.UseVisualStyleBackColor = true;
+            this.FontFixCheck.CheckedChanged += new System.EventHandler(this.FontFixCheck_CheckedChanged);
             // 
             // IncludeAllCheck
             // 
             this.IncludeAllCheck.AutoSize = true;
             this.IncludeAllCheck.Location = new System.Drawing.Point(12, 78);
             this.IncludeAllCheck.Name = "IncludeAllCheck";
-            this.IncludeAllCheck.Size = new System.Drawing.Size(199, 16);
+            this.IncludeAllCheck.Size = new System.Drawing.Size(185, 16);
             this.IncludeAllCheck.TabIndex = 3;
-            this.IncludeAllCheck.Text = "reaper.exe 以外のフォントも修正する";
+            this.IncludeAllCheck.Text = "Plugins フォルダ以下も対象にする";
             this.IncludeAllCheck.UseVisualStyleBackColor = true;
+            this.IncludeAllCheck.CheckedChanged += new System.EventHandler(this.IncludeAllCheck_CheckedChanged);
             // 
             // LanguagePackCheck
             // 
@@ -88,6 +92,7 @@
             this.LanguagePackCheck.TabIndex = 4;
             this.LanguagePackCheck.Text = "最新版の日本語化パックをインストールする";
             this.LanguagePackCheck.UseVisualStyleBackColor = true;
+            this.LanguagePackCheck.CheckedChanged += new System.EventHandler(this.LanguagePackCheck_CheckedChanged);
             // 
             // ExecuteButton
             // 
@@ -98,6 +103,7 @@
             this.ExecuteButton.TabIndex = 6;
             this.ExecuteButton.Text = "実行";
             this.ExecuteButton.UseVisualStyleBackColor = true;
+            this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
             // 
             // TargetReaperBox
             // 
@@ -127,6 +133,7 @@
             this.AuthorLinkLabel.TabIndex = 9;
             this.AuthorLinkLabel.TabStop = true;
             this.AuthorLinkLabel.Text = "by chiepomme";
+            this.AuthorLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AuthorLinkLabel_LinkClicked);
             // 
             // ProgressLabel
             // 
@@ -137,6 +144,12 @@
             this.ProgressLabel.Size = new System.Drawing.Size(53, 12);
             this.ProgressLabel.TabIndex = 10;
             this.ProgressLabel.Text = "進行状況";
+            // 
+            // ReaperBrowseDialog
+            // 
+            this.ReaperBrowseDialog.DefaultExt = "exe";
+            this.ReaperBrowseDialog.FileName = "reaper.exe";
+            this.ReaperBrowseDialog.Title = "reaper.exe を選択してください";
             // 
             // MainView
             // 
@@ -174,6 +187,7 @@
         private System.Windows.Forms.ProgressBar ProgressBar;
         private System.Windows.Forms.LinkLabel AuthorLinkLabel;
         private System.Windows.Forms.Label ProgressLabel;
+        private System.Windows.Forms.OpenFileDialog ReaperBrowseDialog;
     }
 }
 

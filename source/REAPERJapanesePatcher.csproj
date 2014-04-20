@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Model\Downloader.cs" />
+    <Compile Include="src\Model\FontFixer.cs" />
+    <Compile Include="src\Model\Subsequence.cs" />
+    <Compile Include="src\Extension\PathStringExtension.cs" />
+    <Compile Include="src\Model\ReaperFinder.cs" />
+    <Compile Include="src\Model\JapanesePatcher.cs" />
+    <Compile Include="src\Model\LanguagePackInstaller.cs" />
     <Compile Include="src\View\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,9 +86,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
