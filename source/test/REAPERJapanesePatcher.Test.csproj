@@ -51,7 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ReaperFinderTest.cs" />
-    <Compile Include="FontFixerTest.cs" />
+    <Compile Include="ReaperBinaryFixControllerTest.cs" />
     <Compile Include="SubsequenceTest.cs" />
     <Compile Include="PathStringExtensionTest.cs" />
     <Compile Include="LanguagePackInstallerTest.cs" />

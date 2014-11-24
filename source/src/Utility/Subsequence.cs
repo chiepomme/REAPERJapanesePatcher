@@ -5,16 +5,16 @@ using System.Linq;
 namespace REAPERJapanesePatcher
 {
     // http://www.geocities.jp/m_hiroi/light/pyalgo11.html
-    public class Subsequence
+    public class SubsequenceFinder
     {
         public readonly int Length;
-        readonly byte[] Subseq;
+        readonly byte[] Subsequence;
         readonly int[] MovementMap;
 
-        public Subsequence(byte[] subseq)
+        public SubsequenceFinder(byte[] subsequence)
         {
-            Subseq = subseq;
-            Length = subseq.Length;
+            Subsequence = subsequence;
+            Length = subsequence.Length;
 
             MovementMap = new int[sizeof(byte) * 256];
 
@@ -25,7 +25,7 @@ namespace REAPERJapanesePatcher
 
             for (var key = 0; key < Length; key++)
             {
-                MovementMap[Subseq[key]] = Length - key;
+                MovementMap[Subsequence[key]] = Length - key;
             }
         }
 
@@ -41,7 +41,7 @@ namespace REAPERJapanesePatcher
                 var subseqPos = 0;
                 while (subseqPos < Length)
                 {
-                    if (source[sourcePos + subseqPos] != Subseq[subseqPos]) break;
+                    if (source[sourcePos + subseqPos] != Subsequence[subseqPos]) break;
                     subseqPos++;
                 }
 

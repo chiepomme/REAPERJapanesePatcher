@@ -24,7 +24,7 @@ namespace REAPERJapanesePatcher
 
         readonly ReaperFinder ReaperFinder = new ReaperFinder();
         readonly LanguagePackInstaller LangPackInstaller = new LanguagePackInstaller();
-        readonly FontFixer FontFixer = new FontFixer();
+        readonly FontSizeFixer FontFixer = new FontSizeFixer();
         readonly Downloader Downloader = new Downloader();
 
         public string ReaperPath { get; set; }
@@ -41,7 +41,7 @@ namespace REAPERJapanesePatcher
             SelectedLangPack = LangPackType.Master;
         }
 
-        public async Task FixFonts(IProgress<FontFixProgress> progress = null)
+        public async Task FixFontAndRouting(IProgress<FontFixProgress> progress = null)
         {
             if (!IsFontFixNeeded) return;
 
@@ -54,11 +54,12 @@ namespace REAPERJapanesePatcher
             }
 
             var numOfFiles = targetFiles.Count;
+            var binaryFixer = new ReaperBinaryFixController();
 
             for (var i = 0; i < numOfFiles; i++)
             {
                 if (progress != null) progress.Report(new FontFixProgress(targetFiles.Count, i, targetFiles[i]));
-                await FontFixer.FixFontSizeTo(targetFiles[i], 9);
+                await binaryFixer.Fix(targetFiles[i]);
             }
         }
 
