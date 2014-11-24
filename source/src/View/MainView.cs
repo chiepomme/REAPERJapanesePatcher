@@ -75,7 +75,7 @@ namespace REAPERJapanesePatcher
                     ProgressBar.Value = p.CurrentIndex;
                 });
 
-                await Patcher.FixFonts(fontProgress);
+                await Patcher.FixFontAndRouting(fontProgress);
                 ProgressBar.Value = 0;
                 ProgressLabel.Text = "フォントサイズの修正が完了しました";
             }

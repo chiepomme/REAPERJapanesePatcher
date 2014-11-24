@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace REAPERJapanesePatcher.Test
 {
     [TestClass]
-    public class FontFixerTest
+    public class ReaperBinaryFixControllerTest
     {
         readonly string FixturePath = @"BinaryFixture.dat";
         readonly byte[] SansSerif = Encoding.Unicode.GetBytes("MS Sans Serif\0");
@@ -16,13 +16,13 @@ namespace REAPERJapanesePatcher.Test
         readonly byte[] FontSize = BitConverter.GetBytes((Int16)8);
         readonly byte[] Padding = new byte[] { 0x00, 0x00, 0x00, 0x01 };
 
-        readonly int RepeatTimes = 100;
+        readonly int RepetationTimes = 100;
 
         async Task CreateFixture()
         {
             using (var writer = new FileStream(FixturePath, FileMode.Create))
             {
-                for (var i = 0; i < RepeatTimes; i++)
+                for (var i = 0; i < RepetationTimes; i++)
                 {
                     await WriteAsync(writer, FontSize);
                     await WriteAsync(writer, SansSerif);
@@ -58,14 +58,14 @@ namespace REAPERJapanesePatcher.Test
         {
             await CreateFixture();
 
-            var fixer = new FontFixer();
-            await fixer.FixFontSizeTo(FixturePath, 9);
+            var fixer = new ReaperBinaryFixController();
+            await fixer.Fix(FixturePath);
 
             using (var reader = new FileStream(FixturePath, FileMode.Open))
             {
                 var expectedFontSize = BitConverter.GetBytes((Int16)9);
 
-                for (var i = 0; i < RepeatTimes; i++)
+                for (var i = 0; i < RepetationTimes; i++)
                 {
                     Assert.IsTrue(expectedFontSize.SequenceEqual(await ReadAsync(reader, expectedFontSize.Length)));
                     Assert.IsTrue(SansSerif.SequenceEqual(await ReadAsync(reader, SansSerif.Length)));
