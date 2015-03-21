@@ -1222,7 +1222,7 @@ C4E167520C3410DB=波形キャッシュを生成中...
 [DLG_136] ; IDD_PREFS_PLAY
 7FF1AA9FBDB6B5BB=再生設定
 0616B7FE6E108EE0=プロジェクトの終わりで再生を停止、またはリピートする
-49EB3CF2EE728EFF=ループが無効な場合、選択時間の終わりで再生を停止す
+49EB3CF2EE728EFF=ループが無効な場合、選択時間の終わりで再生を停止する
 700659C953388138=ループごとにエフェクトをリセット (autotune などには向くが、VSTi などには不向き)
 55272D5AF8EE3E11=停止時に編集カーソルまでスクロールする
 8543FFBBFB9AF821=プロジェクトの他の部分を見ているときには、再生追従スクロールを停止する
@@ -1230,22 +1230,22 @@ C4E167520C3410DB=波形キャッシュを生成中...
 926B9B67161D84D0=再生停止時にエフェクトも停止
 80EBAA875417D411=エフェクト停止までの時間
 F0D4137C641EE9CC=ミリ秒 (リバーブの余韻用など)
-AC26191C42FBEB16=スクラブ・ジョグ設定
-;5705FAACAE6DC64F=Only play selected tracks when scrubbing/jogging
-;F17B5D457D4790AC=Limit jog rate to 1.0x
-;F7AB56EC6A4F9C68=Limit jog rate when near cursor
-;10B157188C8B1599=Faster responding jog
-;B1D374C00E58CA81=Limit scrub rate to 1.0x
-;87357E06E9DEB8FB=Engage scrub when playing (stopping playback)
-;7F7CD7579ACF1427=Looped-segment mode:
-;E933DFD376FC73FC=ms to
-;C949552870042115=Scrub-mode controller sensitivity:
-;83598BE24A366D5C=(Note: set mouse scrub/jog behavior in Editing Behavior/Mouse Modifiers)
-;F002B1B68C613802=When moving edit cursor via action or control surface:
+AC26191C42FBEB16=スクラブ再生／ジョグ再生設定
+5705FAACAE6DC64F=スクラブ／ジョグ時に選択トラックのみを再生する
+F17B5D457D4790AC=ジョグは等速以下まで
+F7AB56EC6A4F9C68=カーソル付近はジョグレートを制限
+10B157188C8B1599=高速応答ジョグ
+B1D374C00E58CA81=スクラブは等速以下まで
+87357E06E9DEB8FB=スクラブ／ジョグを通常再生と競合させる
+7F7CD7579ACF1427=区間ループモード:
+E933DFD376FC73FC= ～
+C949552870042115=スクラブ・コントローラー感度:
+83598BE24A366D5C=(※マウスショートカットの項目でスクラブ／ジョグの設定を行う必要があります)
+F002B1B68C613802=アクションやコントロールサーフェス + カーソル移動で:
 ;^D8B3B3186B8C817F=ms
 
 ######## not in template, possibly obsolete (section: DLG_136):
-1280F43535B6B625=アイテムの移動・トリム・フェード変更時に再生位置を変更 プリロール:
+1280F43535B6B625=アイテムの移動・トリム・フェード変更時に再生位置変更 - プリロール:
 486582A28BAF7C0D=トラック内の空白
 640388590CFFBF2B=リピートが有効時のみ
 C276E6DE1ADAA408=トラック下の空白
@@ -1257,26 +1257,26 @@ F005D9CF2CB27C1A=時間軸
 [DLG_137] ; IDD_PREFS_REC
 71A80CCF871123FB=録音設定
 C2CE3FF2933AAAF9=録音時にトラックビューをスクロールする (再生時に有効な場合)
-;30CEF63161AD2E19=Show preview of recording items while recording, update frequency:
-;281AEE36FEF3A6FE=Hz (default 3)
-;BF4A3BF6EB7C6155=Build peaks for recorded files:
-;7E19925878CB813A=On the fly (recommended)
-;922E6A2883A2E7BC=After recording
-;9F420D062BE2C8BA=Manually
-;6E8017A8EE98E94E=Always show full track control panel on armed tracks
-;2EB70AE261D4626B=Start new files every
-;9719B482F4C2B161=megabytes (approximate)
-;CDDF7830EBD06132=When recording multiple tracks, offset file switches for better performance
-;E947E7DF20257706=Prevent recording from starting when no tracks armed
-;FBC599724C60C609=Filename format for recorded files:
-;F2D5C17837573D29=Check free disk space on record start, warn if less than:
-;B370916AFE9C7028=megabytes
-;85B69F498013C4A0=Show free disk space in menu bar
-;B397655E827DB001=Show primary recording path in menu bar
-;5E12527AFCBE1647=Use audio driver reported latency
-;13B9F46717A65033=Output manual offset:
-;E9CD14D3777EDAD6=ms +
-;1AB7E546958711C6=Input manual offset:
+30CEF63161AD2E19=録音時に録音アイテムのプレビューを表示する - プレビュー更新頻度:
+281AEE36FEF3A6FE=Hz (デフォルト: 3)
+BF4A3BF6EB7C6155=録音ファイルのピーク作成:
+7E19925878CB813A=同時進行 (推奨)
+922E6A2883A2E7BC=録音後
+9F420D062BE2C8BA=手動
+6E8017A8EE98E94E=録音待機トラックは全トラックコントロールパネルを表示する
+2EB70AE261D4626B=ファイル切り替え容量:
+9719B482F4C2B161=MB ごと (およそ)
+CDDF7830EBD06132=複数トラック録音時、パフォーマンスに合わせてファイル切り替え容量を変化させる
+E947E7DF20257706=録音待機トラックがない時に警告する
+FBC599724C60C609=録音ファイル名フォーマット:
+F2D5C17837573D29=録音開始時にディスクの空き容量をチェックし、その空き容量が
+B370916AFE9C7028=MB 以下の時に警告する
+85B69F498013C4A0=メニューバーにディスクの空き容量を表示
+B397655E827DB001=メニューバーにプライマリ録音パスを表示
+5E12527AFCBE1647=ドライバレイテンシーを補償する
+13B9F46717A65033=出力オフセット:
+E9CD14D3777EDAD6=ms +
+1AB7E546958711C6=入力オフセット:
 ;^5565002CCE1DFBC7=Prompt to save/delete/rename new files:
 ;^52BC569ACECFA886=on stop
 ;^DDCECC683DEC9D6A=on punch-out/play
@@ -1424,8 +1424,8 @@ D95776186C182E28=→
 
 [DLG_153] ; IDD_PREFS_MIDI
 138115F421695B0D=ジョイスティックを MIDI コントローラとして追加...
-;A4F5378A569069D6=MIDI inputs to make available (selectable as track inputs and/or learnable or action-bindable):
-;2067FD051A93CC68=MIDI outputs to make available (selectable as track outputs):
+A4F5378A569069D6=有効にする MIDI 入力 (トラック入力や、MIDI Learn・MIDI Bind に利用できます):
+2067FD051A93CC68=有効にする MIDI 出力 (トラック出力に利用できます):
 D5D0203E4FFCD927=MIDI ハードウェア設定
 A8497219AE654E06=オールノートオフを送信
 8D7DB08EA63ED4D8=ピッチをリセット
@@ -1460,24 +1460,24 @@ C7B479203D71CE7C=エフェクトチェーンウィンドウを同時に1つし�
 
 [DLG_156] ; IDD_PREFS_AUDIO
 771BE661607B660C=オーディオ
-A965CC5A8248EA92=再生停止中かつソフトが非アクティブの時に、オーディオデバイスを閉じる
-A3E497C30F573907=非アクティブかつ録音オンのトラックが存在する時に、オーディオデバイスを閉じる
-88D3DE337F7E5D78=非アクティブかつReWireデバイスがオープンな時に、オーディオデバイスを閉じる
-1B98A491F616C4FD=再生停止中かつソフトがアクティブの時に、オーディオデバイスを閉じる（応答性低し）
-5CA7B4BF0F7E6D68=オーディオ／MIDIデバイスを開けない時に警告
+A965CC5A8248EA92=再生停止中かつソフトが非アクティブの場合、オーディオデバイスを閉じる
+A3E497C30F573907=非アクティブかつ録音オンのトラックが存在する場合、オーディオデバイスを閉じる
+88D3DE337F7E5D78=非アクティブかつ ReWire デバイスがオープンな場合、オーディオデバイスを閉じる
+1B98A491F616C4FD=再生停止中かつソフトがアクティブの時に、オーディオデバイスを閉じる (応答性低し)
+5CA7B4BF0F7E6D68=オーディオ／MIDI デバイスを開けない時に警告
 AC7AE7A176147DD5=再生停止時に微小フェードアウト
 6AF1C766315DA216=再生開始時に微小フェードイン
-DB9672C1C2AE2D3E=ミュートされたトラックの処理をしない（該当トラックがCPU時間を食わなくなったりなんかしちゃったりする）
-BA491E7B58F98628=ソロのデフォルトをSolo in placeにする（alt+clickで通常ソロ）
-D923B88E7CA24E87=Solo in front時の絞り音量:
+DB9672C1C2AE2D3E=ミュートされたトラックの処理をしない (該当トラックに CPU 時間を割きません)
+BA491E7B58F98628=ソロのデフォルトを Solo in place にする (Alt キーを押しながらクリックで通常ソロ)
+D923B88E7CA24E87=Solo in front 時の絞り音量:
 7F8E5925A86A3457=トラックミュート時のフェード:
 5C326A50E71323BF=ミリ秒 (最大100)
 6721707C5C16AB36=異常音量閾値:
 C5A76E243C28A4AB=チャンネル命名／対応付け
-4554DB9B26BD7F5D=インプットチャンネルをカスタマイズ
+4554DB9B26BD7F5D=入力チャンネルをカスタマイズ
 BC4FB48156117258=カスタマイズ...
-FC22C6EF8E185AD2=アウトプットチャンネルをカスタマイズ
-7744ECC4A8F97396=一般的でないステレオチャンネルの組み合わせを表示（Input 2/Input 3 など）
+FC22C6EF8E185AD2=出力チャンネルをカスタマイズ
+7744ECC4A8F97396=一般的でないステレオチャンネルの組み合わせを表示 (Input 2/Input 3 など)
 ;^D8D27C186BA6D499=dB
 
 ######## added in template (section: DLG_156):
@@ -1660,7 +1660,7 @@ E1F42879AE5000D8=トラック・センド・トラックハードウェア出力
 89325B4900977A87=トラック
 BF552AF240D8670E=トラックボリュームフェーダー デフォルトゲイン値:
 580A497A940808A8=ミキサーに表示
-91357BBC27D0ACD1=主（親）トラックにセンド
+91357BBC27D0ACD1=主 (親) トラックにセンド
 FB9BB78435AB99DF=デフォルトで表示するエンベロープ:
 430C86B44E7308AE=エフェクト前ボリューム
 6B8804B0AFE7CF33=エフェクト前パン
@@ -1847,32 +1847,32 @@ EBBAC9C0D73504CC=全て隠す
 ;^D8D27C186BA6D499=dB
 
 [DLG_203] ; IDD_PREFS_AUDIOBUF
-;FD6CB597F81A51BE=Audio buffering settings
-;A209F590DEBF0FAE=Auto-detect the number of needed audio processing threads
-;61BEF8CE252BFBF0=Audio reading/processing threads:
-;164AAD0DE75983A4=(recommended: 1 per CPU core. can also be 0)
-;CE81FD6CDFB4B2A1=Thread priority:
-;FC932B76ACB875B9=Behavior:
-;2C527E4BC4E1E850=Media buffer size:
-;9AA6529CA6A81E91=ms (default is 1200ms), prebuffer:
-;9AEE19DE54CC8120=% (default is 100%)
-;C0B78103DE8BAEC1=Disable media buffering for tracks with open MIDI editors (recommended)
-;80A76343A9E1E678=Disable media buffering for tracks that are selected
-;017C01A23735EE41=Media buffer size when per-take FX UI open:
-;BEB8AEBD84C1A90D=ms (default is 200ms)
-;51AB61DBF5CB4A76=FX processing/multiprocessing settings
-;A8D66160635DD938=Anticipative FX processing - superior multiprocessing and lower interface latencies
-;9C72AF76953C2AA7=[may not be compatible with certain FX (UAD), live monitoring is not multiprocessed]
-;A0C79D72277D6F0F=Render-ahead:
-;3DA7AD6DA60B893B=ms (default: 200)
-;D3F56CEFCFB9B99E=Allow on tracks without FX (may give higher multiprocessor utilization)
-;331BA087EACA0798=Allow on tracks with open MIDI editors (will increase MIDI preview latency)
-;1E34C617E5353F03=Allow live FX multiprocessing on:
-;A6EE14AB8179B8D8=CPUs
+FD6CB597F81A51BE=オーディオバッファリング設定
+A209F590DEBF0FAE=必要なオーディオ処理スレッド数を自動検出
+61BEF8CE252BFBF0=オーディオ読込・処理スレッド数:
+164AAD0DE75983A4=(CPU コアごとに 1 を推奨。0 も可)
+CE81FD6CDFB4B2A1=スレッド優先度:
+FC932B76ACB875B9=挙動:
+2C527E4BC4E1E850=メディアバッファサイズ:
+9AA6529CA6A81E91=ms (デフォルト: 1200)、プリバッファ:
+9AEE19DE54CC8120=% (デフォルト: 100)
+C0B78103DE8BAEC1=MIDI エディタ起動時にバッファリングを停止 (推奨)
+80A76343A9E1E678=トラック選択時にバッファリングを停止
+017C01A23735EE41=テイクエフェクトUI起動時のメディアバッファ:
+BEB8AEBD84C1A90D=ms (デフォルト: 200)
+51AB61DBF5CB4A76=エフェクト処理／マルチプロセッシング設定
+A8D66160635DD938=エフェクト処理の先読み - インターフェースのレイテンシー低下、上位マルチプロセッシング
+9C72AF76953C2AA7=(UAD プラグイン非互換、ライブモニタリング非対応)
+A0C79D72277D6F0F=先読みレンダリング:
+3DA7AD6DA60B893B=ms (デフォルト: 200)
+D3F56CEFCFB9B99E=エフェクトのないトラックにも適用 (マルチプロセッサの負荷率が高まります)
+331BA087EACA0798=MIDI エディタ起動時にも適用 (MIDI プレビューのレイテンシーが増加します)
+1E34C617E5353F03=ライブ・エフェクト・マルチプロセッシングを
+A6EE14AB8179B8D8=個の CPU で利用
 ;0AA71620AD705B69=Optimize buffering for low latency hardware (recommended)
-;2F2715B3B43668D6=Use native events for synchronizing (recommended)
-;281759C8AD758D95=Advanced Disk I/O options...
-;3CF333030AFB4087=[enables multiprocessing of live input, but may reduce performance at low latencies]
+2F2715B3B43668D6=ネイティブイベントを同期に用いる (推奨)
+281759C8AD758D95=ディスク I/O の詳細オプション...
+3CF333030AFB4087=(ライブ入力のマルチプロセッシングを有効にしますが、低レイテンシー性能が低下します)
 
 [DLG_204] ; IDD_ABOUT_LICENSE
 ;F06854788A1D9107=Licensed to:
@@ -1935,14 +1935,14 @@ C1CB39730620196F=ファイルが見つからない場合にアラートを表示
 CD5317E280F27A31=ロード状況を表示
 D05A2F9A08ACFC82=プロジェクトの保存
 EC403AA6A8B772FE=プロジェクトファイルの参照関係を相対パスで保存
-9594CC6401422D4C=上書き時に古いファイルを.rpp-bakとして保存
+9594CC6401422D4C=上書き時に古いファイルを .rpp-bak として保存
 7096563D9523FBAD=タイムスタンプ
 16EF1DE677B6A5F2= 
 0A1D95E50872708A=分ごと:
 1BDA1BF4E19E27FD=タイムスタンプ・バックアップをプロジェクトのディレクトリに保存
 CC897BECE9A66F4B=タイムスタンプ・バックアップを別途のディレクトリに保存:
-241C380B8459DF0D=プロジェクトファイルに上書き保存（非推奨）
-B0A7FAD536E0CFE0=アンドゥ履歴（.RPP-UNDO）を保存（「一般」で有効化されている場合のみ）
+241C380B8459DF0D=プロジェクトファイルに上書き保存 (非推奨)
+B0A7FAD536E0CFE0=アンドゥ履歴 (.RPP-UNDO) を保存 (「一般」で有効化されている場合のみ)
 ;^F685FB3A91025549=Browse...
 
 ######## added in template (section: DLG_212):
@@ -2027,11 +2027,11 @@ B0A7FAD536E0CFE0=アンドゥ履歴（.RPP-UNDO）を保存（「一般」で有
 ;C38622521AF10C6B=Time signature markers
 
 [DLG_219] ; IDD_PREFS_KBD
-1075019A504F73BB=キーによる数値入力が1秒以上なければ自動的にその値を適用
+1075019A504F73BB=キーによる数値入力が 1 秒以上なければ自動的にその値を適用
 4F3654C5B59115AD=録音時は録音時用のキーボードセクションを使用
-025B90FA447C6C83=ALTキーからのメニュー選択を無効化
+025B90FA447C6C83=Alt キーからのメニュー選択を無効化
 E6999CD562DABC49=キーボードショートカットをアクションに割り当て／既存のショートカットを変更
-E6B1DF361BBAF9D5=キーボードショートカット一覧をウェブページとして開く（印刷・検索が可能）
+E6B1DF361BBAF9D5=キーボードショートカット一覧をウェブページとして開く (印刷・検索が可能)
 5D511FB1F16D0206=マルチタッチ操作
 6E3CC58D60F87F79=マルチタッチスワイプ操作を有効化
 46EB4D9A870E3786=慣性オフ
@@ -3097,9 +3097,9 @@ AA0C81725300640C=インポート...
 
 [DLG_474] ; IDD_PREFS_PATH
 81BBA2B36371EDB5=パス
-973B67107DB3B77C=デフォルトのレンダリングパス（無記入で現在のプロジェクトのディレクトリ）:
-E19AF0FCD67934A5=デフォルトの録音パス（プロジェクト未保存時、および録音パス未指定時）:
-CC1F1831F53F5456=ピークファイル保存の代理パス（「メディア」で有効化されている場合のみ）:
+973B67107DB3B77C=デフォルトのレンダリングパス (無記入で現在のプロジェクトのディレクトリ):
+E19AF0FCD67934A5=デフォルトの録音パス (プロジェクト未保存時、および録音パス未指定時):
+CC1F1831F53F5456=ピークファイル保存の代理パス (「メディア」で有効化されている場合のみ):
 ;^F685FB3A91025549=Browse...
 
 [DLG_475] ; IDD_MEDIAITEMPROPS
@@ -3167,20 +3167,20 @@ A5A7A996DF2D17B7=アイテム分割時に次の長さで重ねてクロスフェ
 E7DA02B3D72195E5=デフォルトのフェードイン／アウト形状:
 0ECD19FA2DD06E9F=デフォルトのクロスフェード形状:
 ;8C101F7FFA7127FD=Right-click on crossfade sets fade shape for only one side of the crossfade (shift toggles)
-FEF3F95B755C2F5E=MIDIノートのベロシティに自動フェード処理（イン・アウト・クロス）を適用
+FEF3F95B755C2F5E=MIDI ノートのベロシティに自動フェード処理 (イン・アウト・クロス)を適用
 ;BEFCAA56940B8887=Loop source for imported items
 ;6C6E4A4439C0D4F8=Loop source for new MIDI items
 ;945688A19C91E2AF=Loop source for recorded items
 ;F86B38011657919B=Time selection auto-punch audio recording creates loopable section
 
 [DLG_478] ; IDD_PREFS_RENDER
-;4DD2B47DA4D97292=Rendering settings
-;BA67DC3729684BA7=Block size to use when rendering:
-;2B9B793C0245346A=samples (leave blank for auto)
-;EC400AB11F1ABACB=Allow anticipative FX processing when rendering (better multiprocessing)
-;45BB0225F77E6549=Limit apply FX/render stems to realtime (good for some plug-ins)
-;789CC946B6370D63=Process all tracks during stem render (some hardware-based plugins may need this)
-;403CF079511FCB84=Tail length when rendering project or stems, or freezing tracks:
+4DD2B47DA4D97292=レンダリング設定
+BA67DC3729684BA7=レンダリングに用いるブロックサイズ:
+2B9B793C0245346A=サンプル (空白で自動設定)
+EC400AB11F1ABACB=エフェクト先読み処理を許可 (マルチプロセッシングで有用)
+45BB0225F77E6549=レンダリングを等速まで制限 (一部のプラグインで有用)
+789CC946B6370D63=レンダリング中に全てのトラックの処理を行う (ハードウェア・ベースのプラグインでこの設定が必要な場合があります)
+403CF079511FCB84=プロジェクトやトラックのレンダリング／フリーズの余剰末尾時間:
 ;363E7FC94526FBB0=When freezing, render the entire track length if there are track or per-take FX
 ;^D8B3B3186B8C817F=ms
 
@@ -3381,32 +3381,32 @@ FEF3F95B755C2F5E=MIDIノートのベロシティに自動フェード処理（�
 [DLG_517] ; IDD_PREFS_SEEK
 
 ######## added in template (section: DLG_517):
-;F706A25E0B92F79C=Seek settings
-;DF253B12E6463891=Seek playback when clicked:
-;F005D9CF2CB27C1A=Top ruler
-;486582A28BAF7C0D=Empty areas of tracks
-;C276E6DE1ADAA408=Empty area below tracks
-;CD8C25E6C3175388=Seek on loop point change
-;640388590CFFBF2B=Only when repeat is enabled
-;E774FE4068484BEB=Preroll:
-;1280F43535B6B625=Seek playback on item move/size/fade adjustment, preroll:
-;C65F09ACEF24DD8C=Playback position follows project timebase (time or beats) when changing tempo
-;2A8DD58E169B129C=Do not change playback position immediately when seeking (smooth seek)
-;DBF401A9BD4D596C=Play to end of
-;65B6AB250B9129D2=more measures before seeking
-;BD2850523C80580D=Play to next project marker, end of current region, or start of next region, before seeking
+F706A25E0B92F79C=シーク設定
+DF253B12E6463891=クリックで再生をシーク:
+F005D9CF2CB27C1A=ルーラー
+486582A28BAF7C0D=トラックの空白部
+C276E6DE1ADAA408=トラックより下の空白部
+CD8C25E6C3175388=ループポイント変更時にシーク
+640388590CFFBF2B=リピート有効時のみ
+E774FE4068484BEB=プリロール:
+1280F43535B6B625=アイテムの位置・サイズ・フェード編集時にシーク - プリロール:
+C65F09ACEF24DD8C=テンポ変更時、再生位置をプロジェクトの時間基準 (時間または拍) で追従
+2A8DD58E169B129C=シークの際に再生位置を瞬時に移動しない (スムーズシーク)
+DBF401A9BD4D596C=移動前に、あと
+65B6AB250B9129D2=小節再生する
+BD2850523C80580D=移動する前に、次のマーカーか、現リージョンの終端か、次リージョンの始端まで再生する
 ;^D8B3B3186B8C817F=ms
 
 [DLG_518] ; IDD_PREFS_REC_LOOP
 
 ######## added in template (section: DLG_518):
-;AF924A0E2CDF74CB=Loop recording settings
-;4F2B31BBF3D2C295=In loop recording, discard incomplete first or last takes if at least one full loop was recorded
-;EE14963C25F0108C=MIDI recording within empty time selection always creates selection-length media item
-;208EE71E50F7ABCB=When recording and looped, add recorded media to project:
-;86CDD3047B701541=On stop (default, recommended)
-;C5B9E0F7E2858D5B=Create new files on loop
-;04B1EA7C5BB5F4F8=At each loop (creates new files, good for recording multiple audio layers on the fly etc)
+AF924A0E2CDF74CB=ループ録音設定
+4F2B31BBF3D2C295=ループ録音時、完全なループ録音に一度でも成功していれば最初や最後の不完全なテイクを破棄する
+EE14963C25F0108C=空白部を時間選択した MIDI 録音において、常に選択分の長さのメディアアイテムを生成する
+208EE71E50F7ABCB=録音かつループ時、録音されたメディアを以下のタイミングでプロジェクトに追加:
+86CDD3047B701541=停止時 (デフォルト、推奨)
+C5B9E0F7E2858D5B=ループ毎に区切られたファイルで生成
+04B1EA7C5BB5F4F8=ループ毎 (ファイルを逐次生成 - 複数オーディオレイヤーを同時進行的に録音する際などに)
 
 [DLG_519] ; IDD_PREFS_AUTOMATION
 
@@ -10173,8 +10173,8 @@ B2FCC2F5B1F8F8AB=異常音量時でもミュートしない
 ;6E9205BD6F506B72=Outlined samples
 ;14FAA560A0940241=Stepped samples
 ;D811D5325411DBAD=Smooth
-;CDD69E77F19A943C=Do not scrub
-;FA7C612AB981A126=Scrub
+CDD69E77F19A943C=スクラブしない
+FA7C612AB981A126=スクラブする
 ;38E7E1DE06F3861E=-Timestamp
 ;DEC7E3C581BAFD00=-Tracknumber
 ;DACF61D2F0B446A6=-Trackname
@@ -10193,7 +10193,7 @@ B2FCC2F5B1F8F8AB=異常音量時でもミュートしない
 ;AD9514E856019AD5=Auto-hide dock when in fullscreen mode
 BA17125F561726C9=非録音時
 27B5DC0DF980814A=再生停止時
-EB0F9F3E9AE022CC=どんな時も
+EB0F9F3E9AE022CC=常に
 ;1813F02D3CB4A561=By default, selecting multiple media items in the arrange view and double-clicking will open all selected items in the MIDI editor.
 ;55CA347DC74A0932=This behavior depends on the setting for \"open items in built-in MIDI editor\", which can be changed on this page.
 ;4CE40209DB74EA3D=Within a single MIDI editor, only one media item can be active, meaning that it can receive drawn or copy/pasted notes and CC data.
@@ -10253,17 +10253,17 @@ EB0F9F3E9AE022CC=どんな時も
 ;1BCA4F5650495E9C=When checked, allows you to treat odd pairs of inputs/outputs as stereo pairs, i.e. not just Channels 1/2, but 2/3 as well.
 
 [prefs_audiodev]
-;2DF91730D72FFD6E=(error getting info)
-;3EF994B7D37DC445=(latency: %d ms)
-;34D436BFAA4E8EDA=No ASIO drivers found!
-;FFB6002103B79E16=Driver Default (recommended)
-;E5984828A8AD9D24=WDM Kernel Streaming
-;9BF5F65011E69DC5=DirectSound
-;0C5C12F89052285A=WaveOut
-;8931E3B9B4BEB40B=ASIO
-;E60104721C668F07=Dummy Audio
-;85CCC5FED305997F=WASAPI (Windows 7/Vista, experimental)
-;B8ECBD868F6E6AFE=Not found:
+2DF91730D72FFD6E=(情報取得エラー)
+3EF994B7D37DC445=(レイテンシー: %d ms)
+34D436BFAA4E8EDA=ASIO ドライバが見つかりません！
+FFB6002103B79E16=ドライバのデフォルト (推奨)
+E5984828A8AD9D24=WDM Kernel Streaming
+9BF5F65011E69DC5=DirectSound
+0C5C12F89052285A=WaveOut
+8931E3B9B4BEB40B=ASIO
+E60104721C668F07=Dummy Audio
+85CCC5FED305997F=WASAPI (Windows 7/Vista, experimental)
+B8ECBD868F6E6AFE=Not found:
 ;^FC0E6CF88C55D677=Time Critical
 ;76036DCB216B5D75=Highest
 ;^B726931672EE1B2F=Above Normal
@@ -10536,9 +10536,9 @@ FA3FBBA0B7D7E042=外部エディタ
 ;^7E11B9683132FA9E=Keyboard
 
 ######## added in template (section: prefs_list):
-;D5332FC0BB3C598A=Loop Recording
-;AA16F711CE3B92D4=Fades/Crossfades
-;5B302E13AF38D591=Envelope Display
+D5332FC0BB3C598A=ループ録音
+AA16F711CE3B92D4=フェード
+5B302E13AF38D591=エンベロープ表示
 ;^6EE06EBD8BEB3E6D=Seeking
 ;^2715653EC997D088=Automation
 
